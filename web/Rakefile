@@ -1,0 +1,7 @@
+require "time"
+
+task :cucumber do
+    time = Time.now.utc.iso8601.tr(":", "")
+    report = "--format html --out=log/report_#{time}.html"
+    sh "cucumber #{report}"
+end
